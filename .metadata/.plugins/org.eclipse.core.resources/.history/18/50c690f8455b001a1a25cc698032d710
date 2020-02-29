@@ -105,12 +105,13 @@ public class Scholarship {
 								eligible();
 								return;
 							}
-						} else {
-							// E
+						}
+						else {
+							//E
 							sop("Have you volunteered for a cause and are you able to show proof of it? Enter yes or no");
 							String volunteer = scan.next();
 							if (question(volunteer)) {
-								// F
+								//F
 								sop("Is your household income less than $5000 annually? Enter yes or no");
 								String income = scan.next();
 								if (question(income)) {

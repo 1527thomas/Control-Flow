@@ -36,6 +36,7 @@ public class Scholarship {
 
 	static void dean() {
 		sop("Dean for consideration");
+		return;
 	}
 
 	private static void sop(String stmt) {
@@ -65,7 +66,6 @@ public class Scholarship {
 							return;
 						} else {
 							eligible();
-							return;
 						}
 					} else {
 						// E
@@ -76,14 +76,11 @@ public class Scholarship {
 							String income = scan.next();
 							if (question(income)) {
 								dean();
-								return;
 							} else {
 								eligible();
-								return;
 							}
 						} else {
 							ineligible();
-							return;
 						}
 					}
 				} else {
@@ -100,39 +97,33 @@ public class Scholarship {
 							String income = scan.next();
 							if (question(income)) {
 								dean();
-								return;
 							} else {
 								eligible();
-								return;
 							}
-						} else {
-							// E
+						}
+						else {
+							//E
 							sop("Have you volunteered for a cause and are you able to show proof of it? Enter yes or no");
 							String volunteer = scan.next();
 							if (question(volunteer)) {
-								// F
+								//F
 								sop("Is your household income less than $5000 annually? Enter yes or no");
 								String income = scan.next();
 								if (question(income)) {
 									dean();
-									return;
 								} else {
 									eligible();
-									return;
 								}
 							} else {
 								ineligible();
-								return;
 							}
 						}
 					} else {
 						ineligible();
-						return;
 					}
 				}
 			} else {
 				ineligible();
-				return;
 			}
 		}
 
