@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Scholarship {
+
+	private static int studentAge;
+	private static boolean stateResidency;
+	private static boolean partTimeJob;
+	private static boolean stateTax;
+	private static boolean volunteer;
+	
+	static boolean isWithinAge(int age) {
+		if(age <= 18) {
+			return false;
+		}
+		else if(age >= 24) {
+			return false;
+		}
+		return true;
+	}
+	
+	static boolean livedInCalifornia(String response) {
+		if(response.equals("no")) {
+			return false;
+		}
+		else if(response.equals("yes")) {
+			return true;
+		}
+		throw new IllegalArgumentException("Invalid Response");
+	}
+	
+	static boolean paidTaxes(String response) {
+		if(response.equals("no")) {
+			return false;
+		}
+		else if(response.equals("yes")) {
+			return true;
+		}
+		throw new IllegalArgumentException("Invalid Response");
+	}
+	
+	static void ineligible() {
+		sop("You are ineligible for this scholarship.");
+		return;
+	}
+	
+	private static void sop(String stmt) {
+		System.out.println(stmt);
+	}
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		sop("Please enter your age: ");
+		while(scan.hasNext()) {
+			int input = scan.nextInt();
+			if(!isWithinAge(input)) {
+				ineligible();
+			}
+			else {
+				sop("Have you lived in California the past 2 years? Enter yes or no");
+				String residency = scan.next();
+				if(!livedInCalifornia(residency)) {
+					sop("Have your parent's paid the California State Tax for at least 1 year? Enter yes or no");
+					String tax = scan.next();
+					if(!paidTaxes(tax)) {
+						return;
+					}
+				}
+			}
+		}
+		
+		
+	}
+}

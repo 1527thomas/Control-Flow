@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Scholarship {
+
+	private static int studentAge;
+	private static boolean stateResidency;
+	private static boolean partTimeJob;
+	private static boolean stateTax;
+	private static boolean volunteer;
+	
+	static boolean isWithinAge(int age) {
+		if(age <= 18) {
+			return false;
+		}
+		else if(age >= 24) {
+			return false;
+		}
+		return true;
+	}
+	
+	static boolean livedInCalifornia() {
+		if(stateResidency == false) {
+			
+		}
+		return true;
+	}
+	
+	private static void sop(String stmt) {
+		System.out.println(stmt);
+	}
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		sop("Please enter your age: ");
+		
+		
+		while(scan.hasNext()) {
+			int input = scan.nextInt();
+			if(!isWithinAge(input)) {
+				sop("You are ineligible for this scholarship.");
+				return;
+			}
+			
+		}
+		
+		
+	}
+}
