@@ -55,11 +55,11 @@ public class Scholarship {
 				String residency = scan.next();
 				if (question(residency)) {
 					// C
-					sop("Have you worked part time for at least 6 months in the relevant field of study? Enter yes or no");
+					sop("Have you worked part time for at least 6 months in the relevant field of study?");
 					String job = scan.next();
 					if (question(job)) {
 						// F
-						sop("Is your household income less than $5000 annually? Enter yes or no");
+						sop("Is your household income less than $5000 annually?");
 						String income = scan.next();
 						if (question(income)) {
 							dean();
@@ -68,10 +68,10 @@ public class Scholarship {
 						}
 					} else {
 						// E
-						sop("Have you volunteered for a cause and are you able to show proof of it? Enter yes or no");
+						sop("Have you volunteered for a cause and are you able to show proof of it?");
 						String volunteer = scan.next();
 						if (question(volunteer)) {
-							sop("Is your household income less than $5000 annually? Enter yes or no");
+							sop("Is your household income less than $5000 annually?");
 							String income = scan.next();
 							if (question(income)) {
 								dean();
@@ -88,11 +88,11 @@ public class Scholarship {
 					String tax = scan.next();
 					if (question(tax)) {
 						// C
-						sop("Have you worked part time for at least 6 months in the relevant field of study? Enter yes or no");
+						sop("Have you worked part time for at least 6 months in the relevant field of study?");
 						String job = scan.next();
 						if (question(job)) {
 							// F
-							sop("Is your household income less than $5000 annually? Enter yes or no");
+							sop("Is your household income less than $5000 annually?");
 							String income = scan.next();
 							if (question(income)) {
 								dean();
